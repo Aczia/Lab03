@@ -69,4 +69,10 @@ public class Chatterbox {
 			output = socket.getOutputStream();
 			
 		}
+		private void setupPrintWriter() throws IOException {
+			printWriter =
+				new PrintWriter(
+					new OutputStreamWriter(
+						client.getOutputStream()));
+		}
 }
