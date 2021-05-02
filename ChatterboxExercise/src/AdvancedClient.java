@@ -13,6 +13,8 @@ public class AdvancedClient {
 		PrintWriter printWriter;
 		String ip;
 		int port;
+		private InputStream input;
+		private OutputStream output;
 		
 
 		public AdvancedClient(String ip, int port){
@@ -57,9 +59,9 @@ public class AdvancedClient {
 	};
 
 	private void setupStreams() throws IOException {  
-		// ?
-		//DataInputStream din = new DataInputStream(socket.getInputStream());  
-		//DataOutputStream dout = new DataOutputStream(socket.getOutputStream());  
+		input = socket.getInputStream();
+		
+		output = socket.getOutputStream(); 
 	}
 	
 	void waitForInput() {
@@ -82,7 +84,9 @@ public class AdvancedClient {
 	}
 	
 	private void connectSocket() throws UnknownHostException, IOException {
-		// ?
+		socket = new Socket(ip, port);
+        out = new PrintWriter(clientSocket.getOutputStream(), true);
+        in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 	}
 	
 	void writeMessage(java.net.Socket socket, String nachricht) throws IOException {

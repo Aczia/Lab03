@@ -1,4 +1,4 @@
-import java.io.IOException;
+import java.io.*;
 import java.nio.channels.Selector;
 import java.util.*;
 import java.util.concurrent.Executors;
@@ -31,11 +31,11 @@ public class MultiPortThreadedServer {
 		}
 			
 			
-			private void listen() { // Zeigt Nachrichten vom Server an
-				
+			private void listen() {}
 			}
 			
 			Runnable listen = new Runnable() {}
+			
 			
 			Runnable echoAll = new Runnab1e() {}
 			
