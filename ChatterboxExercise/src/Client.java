@@ -26,10 +26,7 @@ public static void main (String[] args) throws IOException {
 			e.printStackTrace();
 		}
 	}
-	while(true) {
-		String message = readMessage(bufferedReader);
-		System.out.println(message);
-	}
+	
 	
 }
 	
@@ -54,14 +51,5 @@ private void setupPrintWriter() throws IOException {
 	printWriter = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()));
 }
 
-private String readMessage (BufferedReader bReader) throws IOException {
-	BufferedReader bufferedReader =
-			new BufferedReader(
-				new InputStreamReader(
-					socket.getInputStream()));
-		char[] buffer = new char[200];
-		int anzahlZeichen = bufferedReader.read(buffer, 0, 200); // blockiert bis Nachricht empfangen
-		String nachricht = new String(buffer, 0, anzahlZeichen);
-		return nachricht;
-}
+
 }
