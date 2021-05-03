@@ -48,7 +48,10 @@ void writeMessage(String nachricht) throws IOException {
 
 
 private void setupPrintWriter() throws IOException {
-	printWriter = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()));
+	printWriter =
+		new PrintWriter(
+			new OutputStreamWriter(
+				socket.getOutputStream()));
 }
 
 
